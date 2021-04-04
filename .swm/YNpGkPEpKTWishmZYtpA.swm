@@ -1,0 +1,161 @@
+{
+    "id": "YNpGkPEpKTWishmZYtpA",
+    "name": "SPACE DOC",
+    "task": {
+        "dod": "",
+        "tests": [],
+        "hints": []
+    },
+    "content": [
+        {
+            "type": "text",
+            "text": "Remove Lua coding and style guidelines from documentation"
+        },
+        {
+            "firstLineNumber": 2,
+            "path": ".gitignore",
+            "type": "snippet",
+            "lines": [
+                " test-*-*.txt",
+                " release/*",
+                " space.1",
+                "*hugo"
+            ],
+            "comments": []
+        },
+        {
+            "type": "text",
+            "text": "text !!"
+        },
+        {
+            "type": "text",
+            "text": "Text between snippets"
+        },
+        {
+            "firstLineNumber": 7,
+            "path": "doc/contributing/index.md",
+            "type": "snippet",
+            "lines": [
+                " giturl: github.com/space-sh/space",
+                " editurl: /edit/master/doc/contributing/index.md",
+                " weight: 1200",
+                "*icon: \"<b>11. </b>\"",
+                "+icon: \"<b>12. </b>\"",
+                " ---",
+                " ",
+                " # Contributing"
+            ],
+            "comments": []
+        },
+        {
+            "firstLineNumber": 7,
+            "path": "doc/getting-help/index.md",
+            "type": "snippet",
+            "lines": [
+                " giturl: github.com/space-sh/space",
+                " editurl: /edit/master/doc/getting-help/index.md",
+                " weight: 1100",
+                "*icon: \"<b>10. </b>\"",
+                "+icon: \"<b>11. </b>\"",
+                " ---",
+                " ",
+                " # Getting help"
+            ],
+            "comments": [
+                "snippet comment 1\n\nhi",
+                "comment 2"
+            ]
+        },
+        {
+            "firstLineNumber": 1,
+            "path": "doc/glossary/index.md",
+            "type": "snippet",
+            "lines": [
+                " ---",
+                "*prev: /shell-coding-and-style-guidelines/",
+                "+prev: /lua-coding-and-style-guidelines/",
+                "*prev_title: \"Shell coding and style guidelines\"",
+                "+prev_title: \"Lua coding and style guidelines\"",
+                " next: /references/",
+                " next_title: \"References\"",
+                " title: Glossary",
+                " giturl: github.com/space-sh/space",
+                " editurl: /edit/master/doc/glossary/index.md",
+                " weight: 900",
+                "*icon: \"<b>8. </b>\"",
+                "+icon: \"<b>9. </b>\"",
+                " ---",
+                " ",
+                " # Glossary"
+            ],
+            "comments": []
+        },
+        {
+            "firstLineNumber": 7,
+            "path": "doc/references/index.md",
+            "type": "snippet",
+            "lines": [
+                " weight: 1000",
+                " giturl: github.com/space-sh/space",
+                " editurl: /edit/master/doc/references/index.md",
+                "*icon: \"<b>9. </b>\"",
+                "+icon: \"<b>10. </b>\"",
+                " ---",
+                " ",
+                " # References"
+            ],
+            "comments": [
+                "1",
+                "comment 2"
+            ]
+        },
+        {
+            "firstLineNumber": 1,
+            "path": "doc/shell-coding-and-style-guidelines/index.md",
+            "type": "snippet",
+            "lines": [
+                " ---",
+                " prev: /advanced-space-sh-configuration/",
+                " prev_title: \"Advanced Space.sh configuration\"",
+                "*next: /glossary/",
+                "+next: /lua-coding-and-style-guidelines/",
+                "*next_title: \"Glossary\"",
+                "+next_title: \"Lua coding and style guidelines\"",
+                " title: Shell coding and style guidelines",
+                " weight: 700",
+                " giturl: github.com/space-sh/space"
+            ],
+            "comments": []
+        },
+        {
+            "firstLineNumber": 5,
+            "path": "doc/troubleshooting/index.md",
+            "type": "snippet",
+            "lines": [
+                " weight: 1300",
+                " giturl: github.com/space-sh/space",
+                " editurl: /edit/master/doc/troubleshooting/index.md",
+                "*icon: \"<b>12. </b>\"",
+                "+icon: \"<b>13. </b>\"",
+                " ---",
+                " ",
+                " # Troubleshooting"
+            ],
+            "comments": []
+        }
+    ],
+    "symbols": {},
+    "file_version": "2.0.1",
+    "meta": {
+        "app_version": "0.4.1-0",
+        "file_blobs": {
+            ".gitignore": "a83234840d3c98773c812bf555834662973d240f",
+            "doc/contributing/index.md": "074049386f514d865c5abeeee91db303056df6ee",
+            "doc/getting-help/index.md": "270fea72339e49edd93f3c0a29042766367bb70e",
+            "doc/glossary/index.md": "e83fc1c1412d7e75e8fbe273c6342c5a88ce9a08",
+            "doc/references/index.md": "fabdfb0382a3c9ea66f560c4fe4038f27898001d",
+            "doc/shell-coding-and-style-guidelines/index.md": "06cfc521ab695e1b0f060adc410e46661a119b54",
+            "doc/troubleshooting/index.md": "ca530361619cd997a8a0ed3ba1e50d8e5fbc5eec"
+        }
+    }
+}
