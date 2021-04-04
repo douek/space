@@ -1,0 +1,145 @@
+{
+    "id": "j0YjyA39uJw3Nnju1EMw",
+    "name": "SPacE cLi",
+    "task": {
+        "dod": "Swimm the task",
+        "tests": [
+            "echo \"done\""
+        ],
+        "hints": [
+            "Don't forget to 1"
+        ]
+    },
+    "content": [
+        {
+            "type": "text",
+            "text": "Man page exporter\n=================\n\nThis Space.sh module exports Markdown documentation to roff man pages and HTML.\n\nDependencies\n------------\n\nDepends on `ronn` which can be downloaded from: [https://github.com/rtomayko/ronn/blob/master/INSTALLING](https://github.com/rtomayko/ronn/blob/master/INSTALLING).\n\nUsage\n-----\n\nExport man page for some `input_file`:\n\n```\nspace -f ./tools/manpage_exporter/Spacefile.yaml /man/ -- <input_file>\n```\n\nExport HTML documentation page for some `input_file`:\n\n```\nspace -f ./tools/manpage_exporter/Spacefile.yaml /html/ -- <input_file>\n```\n\nKnown issues\n------------\n\n### \"\\`split': invalid byte sequence in US-ASCII (ArgumentError)\"\n\n`ronn` might throw an error due to missing locale settings. Make sure UTF-8 encoding is set:\n\n```\n$ export LC_ALL=en_US.UTF-8\n$ export LANG=en_US.UTF-8\n```"
+        },
+        {
+            "type": "snippet",
+            "lines": [
+                " # Disable warning about indirectly checking exit code",
+                " # shellcheck disable=2181",
+                " ",
+                "*SPACE_INSTALL_BIN()",
+                "*{",
+                "*    command install -m 755 \"${_bin_file_name}\" \"${_bindest}\"",
+                "*    if [ \"$?\" -gt 0 ]; then",
+                "*        if [ \"$(id -u)\" != 0 ]; then",
+                "*            PRINT \"This program must be run as root in order to install ${_bin_file_name} to ${_bindest}. If performing the manual install, please run: \\\"sudo ./space /install/\\\". Otherwise just run the automated install again using 'sudo sh -c \\\"curl https://get.space.sh\\\"' instead.\" \"error\"",
+                "*        fi",
+                "*        PRINT \"[${_bin_full_path}]  FAILED\" \"error\"",
+                "*        return 1",
+                "*    fi",
+                "*    PRINT \"[${_bin_full_path}]  OK\" \"ok\"",
+                "*}",
+                " ",
+                " SPACE_DEP_INSTALL()",
+                " {"
+            ],
+            "firstLineNumber": 20,
+            "path": "Spacefile.sh",
+            "comments": []
+        },
+        {
+            "type": "snippet",
+            "lines": [
+                "         fi",
+                " ",
+                "         if [ \"$_uname_s\" = \"Darwin\" ]; then",
+                "*            _find_ac=\"/usr/local/etc/bash_completion.d\"",
+                "         fi",
+                "*        PRINT \"In order to uninstall Space, remove the following files: \\\"${_find_space}\\\" \\\"${_find_ac}/space\\\" \\\"${_find_man}\\\"\"",
+                "     fi",
+                " }",
+                " "
+            ],
+            "firstLineNumber": 266,
+            "path": "Spacefile.sh",
+            "comments": []
+        },
+        {
+            "type": "snippet",
+            "lines": [
+                " ",
+                "     if [ \"$#\" -eq 0 ]; then",
+                "         PRINT \"missing input file to generate man page from\" \"error\"",
+                "*        return 1",
+                "+        # complete here",
+                "     fi",
+                " ",
+                "     local _doc_file_path=\"$1\""
+            ],
+            "firstLineNumber": 27,
+            "path": "tools/manpage_exporter/Spacefile.sh",
+            "comments": []
+        },
+        {
+            "type": "snippet",
+            "lines": [
+                "     _doc_file_name=$(basename \"$_doc_file_path\")",
+                "     local _doc_export_path=",
+                "     _doc_export_path=\"$(pwd)/${_doc_file_name%.*}.1\"",
+                "*",
+                "     # Check if file exists",
+                "     if [ ! -f \"$_doc_file_path\" ]; then",
+                "         PRINT \"Failed to load $_doc_file_path\" \"error\"",
+                "*        return 1",
+                "+        # complete here",
+                "     fi",
+                " ",
+                "     # Check if ronn is available"
+            ],
+            "firstLineNumber": 35,
+            "path": "tools/manpage_exporter/Spacefile.sh",
+            "comments": []
+        },
+        {
+            "type": "snippet",
+            "lines": [
+                "     # shellcheck disable=2181",
+                "     if [ $? -ne 0 ]; then",
+                "         PRINT \"Failed to generate man page for $_doc_file_name\" \"error\"",
+                "*        return 1",
+                "+        # complete here",
+                "     else",
+                "         PRINT \"Man page exported to $_doc_export_path\"",
+                "+        # complete here",
+                "     fi",
+                " }",
+                " "
+            ],
+            "firstLineNumber": 53,
+            "path": "tools/manpage_exporter/Spacefile.sh",
+            "comments": []
+        },
+        {
+            "type": "snippet",
+            "lines": [
+                " ",
+                "     if [ \"$#\" -eq 0 ]; then",
+                "         PRINT \"missing input file to generate man page from\" \"error\"",
+                "*        return 1",
+                "     fi",
+                " ",
+                "     local _doc_file_path=\"$1\""
+            ],
+            "firstLineNumber": 68,
+            "path": "tools/manpage_exporter/Spacefile.sh",
+            "comments": []
+        },
+        {
+            "type": "text",
+            "text": "Getting help\n============\n\nFor issues and feature requests, please refer to the project page [GitHub Issues](https://github.com/space-sh/space/issues).  \nVisit [https://space.sh](https://space.sh) for up to date news, information and tutorials."
+        }
+    ],
+    "symbols": {},
+    "file_version": "2.0.1",
+    "meta": {
+        "app_version": "0.4.1-0",
+        "file_blobs": {
+            "Spacefile.sh": "6eb4570d9f762f7b5df000deef251897b84f9bf6",
+            "tools/manpage_exporter/Spacefile.sh": "54eaf398a3a37585b16c27b1160c4f875901af5a"
+        }
+    }
+}
