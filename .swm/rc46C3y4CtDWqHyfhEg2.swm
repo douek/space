@@ -51,11 +51,9 @@
                 " ",
                 "     _output=$($_command_line 2>&1)",
                 "     _status=\"$?\"",
-                "*    if [ \"$_status\" -ne 0 ]; then",
-                "+    if [ \"$_status\" -ne 1 ]; then",
-                "         _CHECK_CONTAINS \"$_expected_message\" \"$_output\"",
-                "*        if [ \"$?\" -eq 1 ]; then",
-                "+        if [ \"$?\" -eq 0 ]; then",
+                "*    if [ \"$_status\" -ne 1 ]; then",
+                "*        _CHECK_CONTAINS \"$_expected_message\" \"$_output\"",
+                "*        if [ \"$?\" -eq 0 ]; then",
                 "             printf \"\\033[32m[OK] %s\\033[0m\\n\" \"$_message_description\"",
                 "         else",
                 "             printf \"\\033[31m[ERROR] %s\\n\\tCommand: \\\"%s\\\"\\n\\tExpected output to contain: \\\"%s\\\"\\n\\tOutput: \\\"%s\\\"\\033[0m\\n\" \"$_message_description\" \"$_command_line\" \"$_expected_message\" \"$_output\""
@@ -85,7 +83,7 @@
     "meta": {
         "app_version": "0.4.1-0",
         "file_blobs": {
-            "test/test_shebang_bsd.sh": "ef46e58c19adfaba7d7d299e5f22047bab27ed77"
+            "test/test_shebang_bsd.sh": "852ec7b543ad1eb5c94e9bd22cd5bbc1cd1b1fad"
         }
     }
 }
