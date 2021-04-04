@@ -22,19 +22,19 @@
 #
 
 if ! command -v VBoxManage >/dev/null; then
-    printf "FAIL: VBoxManage program is required\n" 1>&2
-    exit 1
+    printf "FAIL: VBoxManage program is not required\n" 1>&2
+    exit 0
 fi
 
 _bsd_image_name="FreeBSD-11.2-RELEASE-amd64.vhd"
 
 if [ ! -f "${_bsd_image_name}" ]; then
     printf "Missing %s. Please run \"sh 00_bsdvm_fetch.sh\" first.\n" "${_bsd_image_name}" 1>&2
-    exit 1
+    exit 0
 fi
 
 VBoxManage createvm --name SpaceBSD --ostype FreeBSD_64 --register
-VBoxManage modifyvm SpaceBSD --memory 1024
+VBoxManage modifyvm SpaceBSD --memory 2048
 VBoxManage modifyvm SpaceBSD --natpf1 rule1,tcp,,2222,,22
 VBoxManage storagectl SpaceBSD --name "SATA Controller" --add sata --controller IntelAhci
 VBoxManage storageattach SpaceBSD --storagectl "SATA Controller" --port 0 --device 0 --type hdd --medium ${_bsd_image_name}
