@@ -264,10 +264,6 @@ SPACE_UNINSTALL()
                 fi
             fi
         fi
-
-        if [ "$_uname_s" = "Darwin" ]; then
-            _find_ac="/usr/local/etc/bash_completion.d"
-        fi
         PRINT "In order to uninstall Space, remove the following files: \"${_find_space}\" \"${_find_ac}/space\" \"${_find_man}\""
     fi
 }

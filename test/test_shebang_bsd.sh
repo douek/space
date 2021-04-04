@@ -75,9 +75,9 @@ _RUN_CHECK_FAIL()
 
     _output=$($_command_line 2>&1)
     _status="$?"
-    if [ "$_status" -ne 0 ]; then
+    if [ "$_status" -ne 1 ]; then
         _CHECK_CONTAINS "$_expected_message" "$_output"
-        if [ "$?" -eq 1 ]; then
+        if [ "$?" -eq 0 ]; then
             printf "\033[32m[OK] %s\033[0m\n" "$_message_description"
         else
             printf "\033[31m[ERROR] %s\n\tCommand: \"%s\"\n\tExpected output to contain: \"%s\"\n\tOutput: \"%s\"\033[0m\n" "$_message_description" "$_command_line" "$_expected_message" "$_output"
