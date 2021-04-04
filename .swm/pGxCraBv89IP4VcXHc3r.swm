@@ -5,77 +5,12 @@
         {
             "type": "text",
             "text": "🙂🙂🙂🙂🙂❤️❤️❤️\n\nhi\n\n🎊🎊"
-        },
-        {
-            "type": "snippet",
-            "lines": [
-                " ",
-                " ",
-                " #",
-                "*# Check arguments",
-                "*if [ \"$#\" -lt 1 ]; then",
-                "*    printf \"Missing version name. Example: $0 1.0.0\\n\" >&2",
-                "*fi",
-                " ",
-                " #",
-                " # Check requirements"
-            ],
-            "firstLineNumber": 26,
-            "path": "bump_version.sh",
-            "comments": []
-        },
-        {
-            "type": "snippet",
-            "lines": [
-                " fi",
-                " ",
-                " #",
-                "*# Check requirements",
-                "*if ! command -v sed >/dev/null; then",
-                "*    printf \"Missing sed program. Exiting...\\n\" >&2",
-                "*    exit 1",
-                "*fi",
-                " ",
-                " #",
-                " # Data"
-            ],
-            "firstLineNumber": 32,
-            "path": "bump_version.sh",
-            "comments": []
-        },
-        {
-            "type": "snippet",
-            "lines": [
-                "     exit 1",
-                " fi",
-                " ",
-                "*#",
-                "*# Data",
-                "*_current_version_name=$(./space -V 2>&1)",
-                "*for token in $_current_version_name; do  # Get only version numbert",
-                "*    _current_version_name=$token",
-                "*done",
-                "*_version_name=\"$1\"",
-                "*_version_date=$(date \"+%Y-%m-%d\")",
-                " ",
-                " #",
-                " # Files to change"
-            ],
-            "firstLineNumber": 38,
-            "path": "bump_version.sh",
-            "comments": []
-        },
-        {
-            "type": "text",
-            "text": "fruifhruihei aerioh eoari"
         }
     ],
     "symbols": {},
     "file_version": "2.0.1",
     "meta": {
         "app_version": "0.4.1-0",
-        "file_blobs": {
-            "bump_version.sh": "7d6e59e1c8dcefd77521552374b00fc8104cabb3"
-        }
+        "file_blobs": {}
     }
 }
