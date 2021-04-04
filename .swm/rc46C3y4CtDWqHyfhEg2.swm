@@ -1,0 +1,91 @@
+{
+    "id": "rc46C3y4CtDWqHyfhEg2",
+    "name": "important files",
+    "task": {
+        "dod": "fix test_shebang_bsd",
+        "tests": [],
+        "hints": []
+    },
+    "content": [
+        {
+            "type": "text",
+            "text": "[[sym:test/test_shebang_bsd.sh(88c4cfb7-4f3e-483a-9596-fe084228cd2e)]] is very important"
+        },
+        {
+            "type": "snippet",
+            "lines": [
+                " # OSX/BSD style.",
+                " #",
+                " #======================",
+                "*set -o nounset",
+                " ",
+                " #======================",
+                " # _CHECK_CONTAINS"
+            ],
+            "firstLineNumber": 22,
+            "path": "test/test_shebang_bsd.sh",
+            "comments": []
+        },
+        {
+            "type": "snippet",
+            "lines": [
+                "     local _contains=\"$1\"",
+                "     local _string=\"$2\"",
+                "     if [ -z \"${_string##*$_contains*}\" ]; then",
+                "*        return 1",
+                "+        return ?",
+                "     else",
+                "*        return 0",
+                "+        return ?",
+                "     fi",
+                " }",
+                " "
+            ],
+            "firstLineNumber": 42,
+            "path": "test/test_shebang_bsd.sh",
+            "comments": []
+        },
+        {
+            "type": "snippet",
+            "lines": [
+                " ",
+                "     _output=$($_command_line 2>&1)",
+                "     _status=\"$?\"",
+                "*    if [ \"$_status\" -ne 0 ]; then",
+                "+    if [ \"$_status\" -ne 1 ]; then",
+                "         _CHECK_CONTAINS \"$_expected_message\" \"$_output\"",
+                "*        if [ \"$?\" -eq 1 ]; then",
+                "+        if [ \"$?\" -eq 0 ]; then",
+                "             printf \"\\033[32m[OK] %s\\033[0m\\n\" \"$_message_description\"",
+                "         else",
+                "             printf \"\\033[31m[ERROR] %s\\n\\tCommand: \\\"%s\\\"\\n\\tExpected output to contain: \\\"%s\\\"\\n\\tOutput: \\\"%s\\\"\\033[0m\\n\" \"$_message_description\" \"$_command_line\" \"$_expected_message\" \"$_output\""
+            ],
+            "firstLineNumber": 75,
+            "path": "test/test_shebang_bsd.sh",
+            "comments": []
+        },
+        {
+            "type": "text",
+            "text": "like [[sym:test/test_shebang_bsd.sh(88c4cfb7-4f3e-483a-9596-fe084228cd2e)]] also [[sym:test/test_shebang_linux.sh(03aded81-f2da-4c77-815a-bab386460193)]] is important"
+        }
+    ],
+    "symbols": {
+        "88c4cfb7-4f3e-483a-9596-fe084228cd2e": {
+            "type": "path",
+            "text": "test/test_shebang_bsd.sh",
+            "path": "test/test_shebang_bsd.sh"
+        },
+        "03aded81-f2da-4c77-815a-bab386460193": {
+            "type": "path",
+            "text": "test/test_shebang_linux.sh",
+            "path": "test/test_shebang_linux.sh"
+        }
+    },
+    "file_version": "2.0.1",
+    "meta": {
+        "app_version": "0.4.1-0",
+        "file_blobs": {
+            "test/test_shebang_bsd.sh": "ef46e58c19adfaba7d7d299e5f22047bab27ed77"
+        }
+    }
+}
