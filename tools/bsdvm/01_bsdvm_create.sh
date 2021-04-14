@@ -21,6 +21,8 @@
 # Create new VM 
 #
 
+#
+# comment
 if ! command -v VBoxManage >/dev/null; then
     printf "FAIL: VBoxManage program is required\n" 1>&2
     exit 1
