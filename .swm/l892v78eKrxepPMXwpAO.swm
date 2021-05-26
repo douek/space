@@ -1,0 +1,115 @@
+{
+    "id": "l892v78eKrxepPMXwpAO",
+    "name": "Test remove a file",
+    "content": [
+        {
+            "type": "snippet",
+            "lines": [
+                "     # shellcheck disable=2034",
+                "     SPACE_DEP=\"PRINT\"",
+                " ",
+                "*    # Use parameter as target, otherwise defaults to iterate over everything",
+                "*    local _target_directory=\"${1-*}\"",
+                "*    local _output_file_name=",
+                "*    if [ \"$_target_directory\" = \"*\" ]; then",
+                "*        _output_file_name=\"./test-results.txt\"",
+                "*    else",
+                "*        _output_file_name=\"./test-${_target_directory}-results.txt\"",
+                "*    fi",
+                " ",
+                "     # Overwrite output file",
+                "     PRINT \"${_output_file_name}\" > \"$_output_file_name\""
+            ],
+            "firstLineNumber": 21,
+            "path": "test/Spacefile.bash",
+            "comments": []
+        },
+        {
+            "type": "snippet",
+            "lines": [
+                "                 done",
+                " ",
+                "                 # Jump to sub directories",
+                "*                for subdir in ./\"$dir\"/*; do",
+                "*                    # Check if any YAML to run",
+                "*                    for file in \"$subdir\"/*.yaml; do",
+                "*                        # HACK: skip ./test/yaml subdirs",
+                "*                        if [[ \"$subdir\" == *\"/test/yaml\"* ]]; then",
+                "*                            break",
+                "*                        fi",
+                "*                        if [ -f \"$file\" ]; then",
+                "*                            PRINT \"Performing test: $file...\"",
+                "*                            ./space -f \"$file\" /tests/0/ -a >> \"$_output_file_name\" 2>&1;",
+                "*",
+                "*                            # Check for failed execution",
+                "*                            if [ \"$?\" -ne 0 ]; then",
+                "*                                PRINT \"Failed to execute test for $file\" \"error\" >> \"$_output_file_name\" 2>&1",
+                "*                            fi",
+                "*",
+                "*                            break",
+                "*                        fi",
+                "*                    done",
+                "                 done",
+                "             fi",
+                "         done"
+            ],
+            "firstLineNumber": 54,
+            "path": "test/Spacefile.bash",
+            "comments": []
+        },
+        {
+            "type": "snippet",
+            "lines": [
+                " ",
+                " #",
+                " # -S: Pass custom parameter for Space in case Git is not available",
+                "*_SPACE_BIN=\"space\"",
+                "*if ! command -v git >/dev/null; then",
+                "*    _SPACE_BIN=\"space -S\"",
+                "*    printf \"\\033[35mGit command is not available. Signaling Space with -S switch.\\033[0m\\n\"",
+                "*else",
+                "*    printf \"\\033[35mGit command is available.\\033[0m\\n\"",
+                "*fi",
+                " ",
+                " #",
+                " # Test counter"
+            ],
+            "firstLineNumber": 29,
+            "path": "test/test_all_exit_status.sh",
+            "comments": []
+        },
+        {
+            "type": "snippet",
+            "lines": [
+                " #   1 if it finds a match",
+                " #",
+                " #======================",
+                "*_CHECK_CONTAINS()",
+                "*{",
+                "*    local _contains=\"$1\"",
+                "*    local _string=\"$2\"",
+                "*    if [ -z \"${_string##*$_contains*}\" ]; then",
+                "*        return 1",
+                "*    else",
+                "*        return 0",
+                "*    fi",
+                "*}",
+                " ",
+                " #======================",
+                " # _RUN_CHECK_OK and FAIL"
+            ],
+            "firstLineNumber": 55,
+            "path": "test/test_all_exit_status.sh",
+            "comments": []
+        }
+    ],
+    "symbols": {},
+    "file_version": "2.0.1",
+    "meta": {
+        "app_version": "0.4.5-0",
+        "file_blobs": {
+            "test/Spacefile.bash": "573506f03901f1476b3802f05f2f9aa2a976170c",
+            "test/test_all_exit_status.sh": "34be5683cc2bc8b492626ef6be36993584be99c7"
+        }
+    }
+}
